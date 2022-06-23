@@ -29,7 +29,8 @@ function App() {
           "&maxResults=40"
       )
       .then((data) => {
-        console.log(data.data);
+        // console.log(data.data);
+        setResult(data.data.items);
       });
   }
 
@@ -50,6 +51,15 @@ function App() {
           Search
         </button>
       </form>
+      {result.map((book) => (
+        <img
+          src={
+            book.volumeInfo.imageLinks &&
+            book.volumeInfo.imageLinks.smallThumbnail
+          }
+          alt="img"
+        />
+      ))}
     </div>
   );
 }

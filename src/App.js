@@ -51,14 +51,17 @@ function App() {
           Search
         </button>
       </form>
+
       {result.map((book) => (
-        <img
-          src={
-            book.volumeInfo.imageLinks &&
-            book.volumeInfo.imageLinks.smallThumbnail
-          }
-          alt="img"
-        />
+        <a target="_blank" href={book.volumeInfo.previewLink}>
+          <img
+            src={
+              book.volumeInfo.imageLinks &&
+              book.volumeInfo.imageLinks.smallThumbnail
+            }
+            alt="img"
+          />
+        </a>
       ))}
     </div>
   );
